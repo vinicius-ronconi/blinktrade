@@ -243,7 +243,7 @@ class AuthClient(AbstractClient):
             (time.mktime(dt.utctimetuple()) + dt.microsecond / float(consts.NONCE_PRECISION)) *
             consts.NONCE_PRECISION
         ))
-        return str(int(nonce))
+        return nonce
 
     def _get_signature(self, nonce):
         return hmac.new(
