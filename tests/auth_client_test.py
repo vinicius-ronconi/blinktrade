@@ -438,8 +438,8 @@ class AuthClientTestCase(TestCase):
         dt = datetime(2016, 8, 1, 15, 0, 0)
         mocked_datetime.utcnow.return_value = dt
         nonce = str(int(
-                (time.mktime(dt.utctimetuple()) + dt.microsecond / float(consts.NONCE_PRECISION)) *
-                consts.NONCE_PRECISION
+            (time.mktime(dt.utctimetuple()) + dt.microsecond / float(consts.NONCE_PRECISION)) *
+            consts.NONCE_PRECISION
         ))
         self.assertIsInstance(nonce, str)
 

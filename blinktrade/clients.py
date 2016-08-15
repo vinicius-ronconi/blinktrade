@@ -184,7 +184,7 @@ class AuthClient(AbstractClient):
 
     def _get_order_status_from_response(self, response):
         responses = [r for r in response['Responses'] if r['MsgType'] == consts.MessageType.ORDER_STATUS_RESPONSE]
-        multilevel_order_list = [self._make_placed_order_from_order_status_response(response) for response in responses]
+        multilevel_order_list = [self._make_placed_order_from_order_status_response(item) for item in responses]
         flat_list = [item for sublist in multilevel_order_list for item in sublist]
         return flat_list
 
@@ -240,8 +240,8 @@ class AuthClient(AbstractClient):
     def _get_nonce():
         dt = datetime.utcnow()
         nonce = str(int(
-                (time.mktime(dt.utctimetuple()) + dt.microsecond / float(consts.NONCE_PRECISION)) *
-                consts.NONCE_PRECISION
+            (time.mktime(dt.utctimetuple()) + dt.microsecond / float(consts.NONCE_PRECISION)) *
+            consts.NONCE_PRECISION
         ))
         return str(int(nonce))
 
