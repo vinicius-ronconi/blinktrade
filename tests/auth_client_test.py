@@ -103,7 +103,7 @@ class AuthClientTestCase(TestCase):
         ]
     })
     def test_it_places_a_market_buy_order(self, _):
-        order_response = self.client.buy_bitcoins_with_market_order(2000, 5)
+        order_response = self.client.buy_bitcoins_with_market_order(5)
         self._assert_buy_orders_responses(order_response)
 
     def _assert_buy_orders_responses(self, order_response):
@@ -188,7 +188,7 @@ class AuthClientTestCase(TestCase):
         ]
     })
     def test_it_places_a_market_sell_order(self, _):
-        order_response = self.client.sell_bitcoins_with_market_order(2000, 5)
+        order_response = self.client.sell_bitcoins_with_market_order(5)
         self._assert_sell_orders_responses(order_response)
 
     def _assert_sell_orders_responses(self, order_response):

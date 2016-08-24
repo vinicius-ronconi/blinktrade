@@ -104,14 +104,14 @@ class AuthClient(AbstractClient):
     def buy_bitcoins_with_limited_order(self, price, quantity):
         return self._place_order(consts.OrderSide.BUY, consts.OrderType.LIMITED_ORDER, price, quantity)
 
-    def buy_bitcoins_with_market_order(self, price, quantity):
-        return self._place_order(consts.OrderSide.BUY, consts.OrderType.MARKET, price, quantity)
+    def buy_bitcoins_with_market_order(self, quantity):
+        return self._place_order(consts.OrderSide.BUY, consts.OrderType.MARKET, price=0.01, quantity=quantity)
 
     def sell_bitcoins_with_limited_order(self, price, quantity):
         return self._place_order(consts.OrderSide.SELL, consts.OrderType.LIMITED_ORDER, price, quantity)
 
-    def sell_bitcoins_with_market_order(self, price, quantity):
-        return self._place_order(consts.OrderSide.SELL, consts.OrderType.LIMITED_ORDER, price, quantity)
+    def sell_bitcoins_with_market_order(self, quantity):
+        return self._place_order(consts.OrderSide.SELL, consts.OrderType.LIMITED_ORDER, price=0.01, quantity=quantity)
 
     def cancel_order(self, order_id):
         msg = {
