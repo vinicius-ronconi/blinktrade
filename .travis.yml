@@ -1,19 +1,19 @@
 language: python
 python:
-  - "3.4"
-  - "3.5"
-  - "3.5-dev"
-  - "nightly"
-install: "pip install -r requirements.txt"
-before_script:
-   flake8 .
+- '3.4'
+- '3.5'
+- 3.5-dev
+- nightly
+install: pip install -r requirements.txt
+before_script: flake8 .
 script: nosetests
 deploy:
   provider: pypi
   user: vinicius.ronconi
   password:
-    secure: Bh3MI6UioW2bmrqOh8FJxyF+wStD2ShzXtobYrkzaxHSnhEKTyr6hT5G94CsSJDLOu3D7ONwNZ4ReEZ/q8EV9DMRGnw5gslKH1q1gU+Drw4+PPw0fihXDmkTxNqJ7ALwuziJNzGOtt2p+y3OyHPZR5Ybcy+gskw3dVzAgwNhGLdGTzlLTpHZBdzT1BfK8YRLlrsnlRJ+0Y+qCmVW067EwDOPbIq6zI8oLLiKXHZhx0FeHjc0UPc7Zxcj2QFAVQz2qii7QYN9OKpWJe2oLdh8WRz211vCGBK3QGoXRu8WJ1a1oriAb8A2oE8cJ8mTdlvFIkaEKp1FVTQVQswwA8xsXCpCEkjooJoDbxGoH/5V6kzMMWDQ0A7AtFw7zDW1bMpcCTxvrS4lAo9nOjpMLORnuL2KC3OWyYRFVr0N8H2YG/M1Rg5T1HgoceXNJ6TdLz31SzN39wGGxtdM2Uye01/49pzwGfXtk8XrT6eyzsHDbi40vRA/bTEVJVAsdrfUT15z3KvK5gRwNR/Dq7u+H5rh3HymypWtPoy5ZmIv4tJFmVvuRa5NOIxrNYMgsw8zUVI6w6IzOP3tg2C50/eKJ+j47VKhSsOxuHKdWSE0wnBNalJB4f9xLxaPQoQPGRjuk5WR5cQgBXt6E8zKIBpSD2Y6+bdkquIfr3JqjKbeWsFtx1o=
+    secure: QnO33LD/Qqy9rJijJszXuVlV6nMeHiHsi2Ii9fuEPOmHMyEGONJWmXpcBGkI0Om8tIek4XiBen/tlaVIYnyea7JWNnsp38DTh3XgE/1fA3HUVJCvw2aqtOTsdkEzBp8+oCiMKx9OQvFVFO8ywlPROPUqa744sqbJNh2U5XQZe+r3LXvqYQ+lhX/DDyiPmyNWaaYmKua1ri8e21M/NWistUZ2KEqsF/4xXDvd2PmvlTI/mgqO5uCF2zTiBVnsOIqC9Y2T6BPtMQYPJ4nUiA0kNH/NhlhYICEp8WBV7jf3pgbEBlJCLPgiX+WdsLjxTLzkxa14oJtOa0pZRMvjaBPBWriDZDPTrbpENk2vUWyMs+0l1HHmtXnmpWFeXCUtMOex24vdrtqKJsuXRR/StD6cnPD4W736sxunT5ZiKDkdj5lZf0RHKajmSJW+bFQummbNIU9Z+3vrUEFGNB8pC/0NQu6VcgaaMUTJLbLfMn84haGm3yXymK2hb4ybSqZHBxrieG/E3D1lbVI7s37UVPaROPOoZv6ZARqkDGRGvOo2LbbEel+EsElirBzx6VCDO8zZLb/ZYLGSWaiQsqGCo/LFGlAg7EXSv3vz9Ems2sG7y5T4GM7e+9eVIC/KnL8UBlmPyIzfMeRKYW5PW/E/jDiY3Wr6JOdhT5rutt6HhiIsF98=
   on:
+    distributions: sdist bdist_wheel
+    repo: vinicius-ronconi/blinktrade
     branch: master
-    tags: false
     condition: $TRAVIS_PYTHON_VERSION = "3.5"
