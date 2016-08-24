@@ -15,7 +15,7 @@ except Exception:
 
 setup(
     name='blinktrade',
-    version='0.1.0',
+    version='0.1.1',
     description='A python client for BlinkTrade Bitcoin Platform',
     long_description=long_description,
     url='https://github.com/vinicius-ronconi/blinktrade',
@@ -28,7 +28,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
