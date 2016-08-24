@@ -12,8 +12,8 @@ ENVIRONMENTS_CHOICES = {
 }
 
 ENVIRONMENT_TO_SERVER_MAP = {
-    Environment.PRODUCTION: 'https://blinktrade.blinktrade.com',
-    Environment.TEST: 'https://blinktrade.testnet.blinktrade.com',
+    Environment.PRODUCTION: 'https://api.blinktrade.com',
+    Environment.TEST: 'https://api.testnet.blinktrade.com',
 }
 
 

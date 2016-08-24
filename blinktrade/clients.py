@@ -66,7 +66,7 @@ class OpenClient(AbstractClient):
         return self._get_market_data(consts.MarketInformation.TRADES, '?since={}'.format(since_ts))
 
     def _get_market_data(self, requested_info, params=''):
-        url = '{domain}/blinktrade/{version}/{currency}/{type}{params}'.format(
+        url = '{domain}/api/{version}/{currency}/{type}{params}'.format(
             domain=self.environment_server,
             version=self.API_VERSION,
             currency=self.currency,
